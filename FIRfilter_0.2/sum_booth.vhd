@@ -1,8 +1,8 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.std_logic_signed.ALL;
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.std_logic_signed.ALL;
 
-ENTITY booth_multiplier IS
+entity booth_multiplier is
 
 	GENERIC (x : INTEGER := 16;
 		 y : INTEGER := 16);
@@ -11,13 +11,13 @@ ENTITY booth_multiplier IS
 	     r : IN STD_LOGIC_VECTOR(y - 1 DOWNTO 0);
 	     result : OUT STD_LOGIC_VECTOR(x + y - 1 DOWNTO 0));
 		  
-END booth_multiplier;
+end booth_multiplier;
 
-ARCHITECTURE behavior OF booth_multiplier IS
+architecture behavior of booth_multiplier is
 
-BEGIN
+begin
 	
-	PROCESS(m, r)
+	process(m, r)
 		
 		CONSTANT X_ZEROS : STD_LOGIC_VECTOR(x - 1 DOWNTO 0) := (OTHERS => '0');
 		CONSTANT Y_ZEROS : STD_LOGIC_VECTOR(y - 1 DOWNTO 0) := (OTHERS => '0');
@@ -62,4 +62,4 @@ BEGIN
 		
 	END PROCESS;
 	
-END behavior;
+end behavior;
