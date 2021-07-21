@@ -49,22 +49,39 @@ begin
     end process;
     
     prod(0) <= p0(0);
-    prod(1) <= s0(1);
-    prod(2) <= s2(2);
-    prod(3) <= s3(7);
-    prod(4) <= s4(9);
-    prod(5) <= s5(0);
-    prod(6) <= s5(1);
-    prod(7) <= s6(0);
-    prod(8) <= s6(1);
-    prod(9) <= s6(2);
-    prod(10) <= s6(3);
-    prod(11) <= s6(4);
-    prod(12) <= s6(5);
-    prod(13) <= s6(6);
-    prod(14) <= s6(7);
-    prod(15) <= s6(8) or c6(8);
-  
+    prod(1) <= s0(0);
+    prod(2) <= s4(13);
+    prod(3) <= s8(0);
+    prod(4) <= s10(6);
+    prod(5) <= s12(2);
+    prod(6) <= s13(10);
+    prod(7) <= s13(11);
+    prod(8) <= s13(12);
+    prod(9) <= s13(13);
+    prod(10) <= s13(14);
+    prod(11) <= s13(15);
+    prod(12) <= s13(16);
+    prod(13) <= s13(17);
+    prod(14) <= s14(0);
+    prod(15) <= s15(0);
+    prod(16) <= s15(1);
+    prod(17) <= s15(2);
+    prod(18) <= s15(3);
+    prod(19) <= s15(4);
+    prod(20) <= s15(5);
+    prod(21) <= s15(6);
+    prod(22) <= s15(7);
+    prod(23) <= s15(8);
+    prod(24) <= s15(9);
+    prod(25) <= s15(10);
+    prod(26) <= s15(11);
+    prod(27) <= s15(12);
+    prod(28) <= s15(13);
+    prod(29) <= s15(14);
+    prod(30) <= s15(15);
+    prod(31) <= s15(16) OR c15(16);
+
+    
 -- Primera etapa
 ha000: half_adder port map(p0(1), p1(0), s0(0), c0(0));
 fa000: full_adder port map(p0(2), p1(1), p2(0), s0(1), c0(1));
@@ -332,14 +349,53 @@ ha052: half_adder port map(s12(0), c11(17), s13(8), c13(8));
 ha053: half_adder port map(s12(1), c12(0), s13(9), c13(9));
 
 -- Sexta etapa
-ha053: half_adder port map(s12(1), c12(0), s13(10), c13(10));
-ha053: half_adder port map(s12(1), c12(0), s13(11), c13(11));
-ha053: half_adder port map(s12(1), c12(0), s13(12), c13(12));
-ha053: half_adder port map(s12(1), c12(0), s13(13), c13(13));
-ha053: half_adder port map(s12(1), c12(0), s13(14), c13(14));
-ha053: half_adder port map(s12(1), c12(0), s13(15), c13(15));
-ha053: half_adder port map(s12(1), c12(0), s13(16), c13(16));
-ha053: half_adder port map(s12(1), c12(0), s13(17), c13(17));
-ha053: half_adder port map(s12(1), c12(0), s13(9), c13(9));
+ha054: half_adder port map(s12(3), c12(2), s13(10), c13(10));
+fa190: full_adder port map(s12(4), c12(3), c13(10), s13(11), c13(11));
+fa191: full_adder port map(s12(5), c12(4), c13(11), s13(12), c13(12));
+fa192: full_adder port map(s12(6), c12(5), c13(12), s13(13), c13(13));
+fa193: full_adder port map(s12(7), c12(6), c13(13), s13(14), c13(14));
+fa194: full_adder port map(s12(8), c12(7), c13(14), s13(15), c13(15));
+fa195: full_adder port map(s12(9), c12(8), c13(15), s13(16), c13(16));
+fa196: full_adder port map(s12(10), c12(9), c13(16), s13(17), c13(17));
+fa197: full_adder port map(s12(11), c12(10), c13(17), s14(0), c14(0));
 
+fa198: full_adder port map(s12(12), c10(17), c12(11), s14(1), c14(1));
+fa199: full_adder port map(s12(13), c11(1), c12(12), s14(2), c14(2));
+fa200: full_adder port map(s12(14), c11(3), c12(13), s14(3), c14(3));
+fa201: full_adder port map(s12(15), c11(5), c12(14), s14(4), c14(4));
+fa202: full_adder port map(s12(16), c11(7), c12(15), s14(5), c14(5));
+
+fa203: full_adder port map(s12(17), c12(16), c14(5), s14(6), c14(6));
+fa204: full_adder port map(s13(0), c12(17), c14(6), s14(7), c14(7));
+fa205: full_adder port map(s13(1), c13(0), c14(7), s14(8), c14(8));
+fa206: full_adder port map(s13(2), c13(1), c14(8), s14(9), c14(9));
+fa207: full_adder port map(s13(3), c13(2), c14(9), s14(10), c14(10));
+fa208: full_adder port map(s13(4), c13(3), c14(10), s14(11), c14(11));
+fa209: full_adder port map(s13(5), c13(4), c14(11), s14(12), c14(12));
+fa210: full_adder port map(s13(6), c13(5), c14(12), s14(13), c14(13));
+fa211: full_adder port map(s13(7), c13(6), c14(13), s14(14), c14(14));
+fa212: full_adder port map(s13(8), c13(7), c14(14), s14(15), c14(15));
+fa213: full_adder port map(s13(9), c13(8), c14(15), s14(16), c14(16));
+fa214: full_adder port map(c12(1), c13(9), c14(16), s14(17), c14(17));
+
+-- séptima etapa
+
+fa215: half_adder port map(s14(1), c14(0), s15(0), c15(0));
+fa216: full_adder port map(s14(2), c14(1), c15(0), s15(1), c15(1));
+fa217: full_adder port map(s14(3), c14(2), c15(1), s15(2), c15(2));
+fa218: full_adder port map(s14(4), c14(3), c15(2), s15(3), c15(3));
+fa219: full_adder port map(s14(5), c14(4), c15(3), s15(4), c15(4));
+
+ha055: half_adder port map(s14(6), c15(4), s15(5), c15(5));
+ha056: half_adder port map(s14(7), c15(5), s15(6), c15(6));
+ha057: half_adder port map(s14(8), c15(6), s15(7), c15(7));
+ha058: half_adder port map(s14(9), c15(7), s15(8), c15(8));
+ha059: half_adder port map(s14(10), c15(8), s15(9), c15(9));
+ha060: half_adder port map(s14(11), c15(9), s15(10), c15(10));
+ha061: half_adder port map(s14(12), c15(10), s15(11), c15(11));
+ha062: half_adder port map(s14(13), c15(11), s15(12), c15(12));
+ha063: half_adder port map(s14(14), c15(12), s15(13), c15(13));
+ha064: half_adder port map(s14(15), c15(13), s15(14), c15(14));
+ha065: half_adder port map(s14(16), c15(14), s15(15), c15(15));
+ha066: half_adder port map(s14(17), c15(15), s15(16), c15(16));
 end Behavioral;
