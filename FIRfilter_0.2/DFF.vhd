@@ -2,27 +2,28 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity DFF is
+entity flipflopD is
+ GENERIC(LENGTH: INTEGER:= 4);
    port(
-      Q : out std_logic_vector(15 downto 0);      --output connected to the adder
-      Clk :in std_logic;      -- Clock input
-      D :in  std_logic_vector(15 downto 0)      -- Data input from the MCM block.
+      Q : out std_logic_vector(LENGTH-1 downto 0);      
+      clk :in std_logic;    
+      D :in  std_logic_vector(LENGTH-1 downto 0)      
    );
-end DFF;
+end flipflopD;
 
-architecture Behavioral of DFF is
+architecture Behavioral of flipflopD is
 
-signal qt : std_logic_vector(15 downto 0) := (others => '0');
+signal qreg : std_logic_vector(LENGTH-1 downto 0) := (others => '0');
 
 begin
 
-Q <= qt;
+Q <= qreg;
 
-process(Clk)
-begin
-  if ( rising_edge(Clk) ) then
-    qt <= D;
-  end if;      
-end process;
+    sincronizacion:process(Clk)
+    begin
+      if (rising_edge(clk)) then
+        qreg <= D;
+      end if;      
+    end process;
 
 end Behavioral;
