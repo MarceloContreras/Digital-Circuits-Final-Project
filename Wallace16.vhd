@@ -196,7 +196,7 @@ fa088: full_adder port map(s1(11), p12(0), c1(4), s5(12), c5(12));
 fa089: full_adder port map(c1(5), c1(6), c1(7), s5(13), c5(13));
 fa090: full_adder port map(s1(12), s1(13), s1(14), s5(14), c5(14));
 fa091: full_adder port map(s1(15), s1(16), c1(8), s5(15), c5(15));
-fa092: full_adder port map(c1(9), c1(10), c1(11), s5(16), c5(17));
+fa092: full_adder port map(c1(9), c1(10), c1(11), s5(16), c5(16));
 fa093: full_adder port map(s1(17), s2(0), s2(1), s5(17), c5(17));
 
 fa094: full_adder port map(s2(2), s2(3), c1(12), s6(0), c6(0));
